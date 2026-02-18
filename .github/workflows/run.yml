@@ -2,7 +2,7 @@ name: Bizinfo Telegram Alert
 
 on:
   schedule:
-    - cron: '0 0 * * *'   # 매일 09:00 KST (UTC 00:00)
+    - cron: '0 1 * * *'   # 매일 09:00 KST (UTC 00:00)
   workflow_dispatch:
 
 jobs:
