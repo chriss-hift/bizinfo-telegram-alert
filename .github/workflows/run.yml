@@ -1,4 +1,4 @@
-name: Bizinfo Telegram Alert
+name: Bizinfo + IRIS Telegram Alert
 
 on:
   schedule:
@@ -6,26 +6,28 @@ on:
   workflow_dispatch:
 
 jobs:
-  run-script:
+  run-scripts:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - name: Install dependencies
         run: |
-          pip install requests
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4
 
-      - name: Run script
+      - name: Run scripts (Bizinfo + IRIS)
         env:
           BIZINFO_CRTFC_KEY: ${{ secrets.BIZINFO_CRTFC_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
           python final_bizinfo.py
+          python iris_alert.py
