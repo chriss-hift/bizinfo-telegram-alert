@@ -2,7 +2,7 @@ name: Bizinfo + IRIS Telegram Alert
 
 on:
   schedule:
-    - cron: '*/5 * * * *'   # 테스트: 5분마다
+    - cron: '*/10 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -31,6 +31,3 @@ jobs:
         run: |
           python final_bizinfo.py
           python iris_alert.py
-
-permissions:
-  contents: read
