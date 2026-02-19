@@ -2,7 +2,7 @@ name: Bizinfo + IRIS Telegram Alert
 
 on:
   schedule:
-    - cron: '*/5 * * * *'   # 매일 09:00 KST (UTC 00:00)
+    - cron: '*/5 * * * *'   # schedule test 활성화
   workflow_dispatch:
 
 jobs:
