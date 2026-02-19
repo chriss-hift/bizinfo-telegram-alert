@@ -31,3 +31,6 @@ jobs:
         run: |
           python final_bizinfo.py
           python iris_alert.py
+
+permissions:
+  contents: read
