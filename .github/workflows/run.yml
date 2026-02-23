@@ -31,4 +31,4 @@ jobs:
         run: |
           python final_bizinfo.py
           python iris_alert.py
-          python kstartup_alert.py
+      
